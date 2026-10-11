@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pocketful | Student Finance Tracker</title>
-    <link rel="stylesheet" href="styles/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <header class="site-header">
         <h1 class="brand">Pocketful</h1>
+        <p class="header-note">Base currency: <strong id="base-currency-label">RWF</strong></p>
     </header>
 
     <nav class="site-nav" aria-label="main">
@@ -132,7 +136,7 @@
                     <input type="checkbox" id="search-case" checked>
                     <span>Ignore case</span>
                 </label>
-                <p id="search-help" class="hint">Try coffee, bus</p>
+                <p id="search-help" class="hint">Try <code>coffee, bus</code></p>
                 <p id="search-status" class="status" role="status"></p>
             </div>
 
