@@ -136,8 +136,47 @@
                 <p id="search-status" class="status" role="status"></p>
             </div>
 
-            
+            <div class="table-wrap">
+                <table class="records-table">
+                    <caption class="sr-only">Your expenses</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Category</th>
+                            <th scope="col" class="num">Amount</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="records-body">
+                        <tr>
+                            <td data-label="Date" class="mono">09-10-2026</td>
+                            <td data-label="Description">Lunch at cafeteria</td>
+                            <td data-label="Category"><span class="chip">Food</span></td>
+                            <td data-label="Amount" class="num mono">2,500</td>
+                            <td data-label="Actions" class="actions">
+                                <button type="button" class="btn btn-small btn-outline" aria-label="Edit Lunch at cafeteria">Edit</button>
+                                <button type="button" class="btn btn-small btn-danger" aria-label="Delete Lunch at cafeteria">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td data-label="Date" class="mono">09-10-2026</td>
+                            <td data-label="Description">Bus</td>
+                            <td data-label="Category"><span class="chip">Transport</span></td>
+                            <td data-label="Amount" class="num mono">9,000</td>
+                            <td data-label="Actions" class="actions">
+                                <button type="button" class="btn btn-small btn-outline" aria-label="Edit bus pass">Edit</button>
+                                <button type="button" class="btn btn-small btn-danger" aria-label="Delete bus pass">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
          </section>
+
+         
     </main>
 </body>
 </html>
