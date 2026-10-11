@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocketful | Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/">
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="brand">Pocketful</h1>
+    </header>
+
+    <nav class="site-nav" aria-label="main">
+        <ul>
+             <li>
+                <a href="#dashboard">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#records">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="4" cy="6" r="1"></circle><circle cx="4" cy="12" r="1"></circle><circle cx="4" cy="18" r="1"></circle></svg>
+                    <span>Records</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#form">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
+                    <span>Add</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#settings">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h12"></path><circle cx="16" cy="6" r="2"></circle><circle cx="8" cy="12" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+            <li>
+                    <a href="#about">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.01"></path></svg>
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+<!-- ========== DASHBOARD ========== -->
+
+    <main id="main" tabindex="-1">
+        <section id="dashboard" aria-labelledby="dashboard-title">
+            <h2 id="dashboard-title">Dashboard</h2>
+            <p class="lead">Your Spending at glance.</p>
+
+            <dl class="stats">
+                <div class="stat">
+                    <dt>Records</dt>
+                    <dd id="stat-count">0</dd>
+                </div>
+                <div class="stat">
+                    <dt>Total Spent</dt>
+                    <dd id="stat-sum">0</dd>
+                </div>
+                <div class="stat">
+                    <dt>Top category</dt>
+                    <dd id="stat-top">None yet</dd>
+                </div>
+            </dl>
+
+            <div class="dash-grid">
+                <div class="card cap" id="cap-card" data-state="calm">
+                    <h3 id="cap-title">Monthly cap</h3>
+                    <p class="cap_numbers"><span id="cap-spent" class="mono">0</span> of <span id="cap-limit" class="mono">60,000</span> RWF</p>
+                    <progress class="meter" id="cap-meter" max="100" value="0" aria-labelledby="cap-title">0%</progress>
+                    <p id="cap-message-polite" class="cap-message" aria-live="polite"></p>
+                    <p id="cap-message-assertive" class="cap-message" aria-live="assertive"></p>
+                </div>
+
+                <div class="card">
+                    <h3>Last 7 days</h3>
+                    <ol class="class" id="trend" aria-label="Spending fro each the last 7 days">
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 1</span></li>
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 2</span></li>
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 3</span></li>
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 4</span></li>
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 5</span></li>
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 6</span></li>
+                        <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Today</span></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-head">
+                    <h3>Latest records</h3>
+                    <a href="#records">See all records</a>
+                </div>
+                <ul class="latest" id="latest-list">
+                    <li class="empty">No records yet. Add your first expense.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ========= Records ========= -->
+         <section id="records" aria-labelledby="record-title">
+            <h2 id="records-title">Records</h2>
+            <p class="lead">Find anything</p>
+
+            <div class="card toolbar" role="search" aria-label="Search and sort records">
+                <div class="field grow">
+                    <label for="search-input">Search</label>
+                    <input type="text" id="search-input" placeholder="Coffee" autocomplete="off" spellcheck="false" aria-labelledby="search-help search-status">
+                </div>
+                <div class="field">
+                    <label for="sort-select">Sort by</label>
+                    <select id="sort-select">
+                        <option value="date-desc">Date, newest first</option>
+                        <option value="date-asc">Date, oldest first</option>
+                        <option value="description-asc">Description A to Z</option>
+                        <option value="description-desc">Description Z to A</option>
+                        <option value="amount-desc">Amount, high to low</option>
+                        <option value="amount-desc">Amount, low to high</option>
+                    </select>
+                </div>
+                
+                <label class="check">
+                    <input type="checkbox" id="search-case" checked>
+                    <span>Ignore case</span>
+                </label>
+                <p id="search-help" class="hint">Try coffee, bus</p>
+                <p id="search-status" class="status" role="status"></p>
+            </div>
+
+            
+         </section>
+    </main>
+</body>
+</html>
