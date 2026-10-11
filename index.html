@@ -176,6 +176,59 @@
             </div>
          </section>
 
+         <!-- ============ ADD/EDIT FORM ============ -->
+
+         <section id="form" aria-labelledby="form-title">
+            <h2 id="form-title">Add expense</h2>
+            <p class="lead">Every field is checked as you type.</p>
+
+            <form class="card form-grid" id="record-form" novalidate>
+                <input type="hidden" id="record-id">
+
+                <div class="field span-2">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" autocomplete="off" aria-describedby="description-hint description-error">
+                    <p id="description-hint" class="hint">No spaces at the start or end.</p>
+                    <p id="description-error" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                    <label for="amount"> Amount <span class="currency-label">RWF</span></label>
+                    <input type="text" id="amount" inputmode="decimal" autocomplete="off" aria-describedby="amount-hint amount-error">
+                    <p id="amount-hint" class="hint">Numbers only up to 2 decimals.</p>
+                    <p id="amount-error" class="erro" aria-live="polite"></p>
+                </div>
+
+                <div class="field">
+                    <label for="date">Date</label>
+                    <input type="text" id="date" inputmode="numeric" placeholder="DD-MM-YYYY" autocomplete="off" aria-describedby="date-hint date-error">
+                    <p id="date-hint" class="hint">Format: DD-MM-YYYY</p>
+                    <P id="date-error" class="error" aria-live="polite"></P>
+                </div>
+
+                <div class="field span-2">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" list="category-options" autocomplete="off" aria-describedby="category-hint category-error">
+                    <datalist id="category-options">
+                        <option value="Food"></option>
+                        <option value="Books"></option>
+                        <option value="Transport"></option>
+                        <option value="Entertainment"></option>
+                        <option value="Fees"></option>
+                        <option value="other"></option>
+                    </datalist>
+                    <p id="category-hint" class="hint">Letters, spaces and hyphens only.</p>
+                    <p id="category-error" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="form-actions span-2">
+                    <button type="submit" class="btn btn-primary" id="save-btn">Save expense</button>
+                    <button type="reset" class="btn btn-outline" id="cancel-btn">Cancel</button>
+                </div>
+                <p id="form-status" class="status span-2" role="status"></p>
+            </form>
+         </section>
+
          
     </main>
 </body>
