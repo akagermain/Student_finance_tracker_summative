@@ -23,3 +23,5 @@ Student Finance Tracker
 ## Contact
 - GitHub: akagermain
 - Email: g.iradukund2@alustudent.com
+
+## Planning
