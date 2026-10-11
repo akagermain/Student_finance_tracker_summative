@@ -229,6 +229,91 @@
             </form>
          </section>
 
+         <!-- ============ SETTINGS ============ -->
+
+         <section id="settings" aria-labelledby="settings-title">
+            <h2 id="settings-title">Settings</h2>
+            <p class="lead">Everything saves on this device as you change it.</p>
+
+            <div class="settings-grid">
+                <div class="card">
+                    <h3>Monthly cap</h3>
+                    <div class="field">
+                        <label for="cap-input">Most you want to spend <span class="curreny-label">RWF</span></label>
+                        <input type="text" id="cap-input" inputmode="decimal" value="60000" autocomplete="off" aria-describedby="cap-input-error">
+                        <p id="cap-input-error" class="error" aria-live="polite"></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Currencies</h3>
+                    <div class="field">
+                        <label for="base-currency">Base currency</label>
+                        <select id="base-currency">
+                            <option value="RWF" selected>RWF</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                        </select>
+                    </div>
+
+                    <fieldset class="rates">
+                        <legend>Exchange rates (you type them)</legend>
+                        <div class="rate-row">
+                            <label for="rate-usd">1 USD =</label>
+                            <input type="text" id="rate-usd" inputmode="decimal" placeholder="Your rate" autocomplete="off" aria-describedby="rate-usd-unit">
+                            <span id="rate-usd-unit">RWF</span>
+                        </div>
+
+                        <div class="rate-row">
+                            <label for="rate-eur">1 EUR =</label>
+                            <input type="text" id="rate-eur" inputmode="decimal" placeholder="Your rate" autocomplete="off" aria-describedby="rate-eur-unit">
+                            <span id="rate-eur-unit">RWF</span>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="card">
+                    <h3>Categories</h3>
+                    <ul class="chips" id="category-list">
+                        <li>Food<button type="button" class="chip-remove" aria-label="Remove Food">&times;</button></li>
+                        <li>Books<button type="button" class="chip-remove" aria-label="Remove Books">&times;</button></li>
+                        <li>Transport<button type="button" class="chip-remove" aria-label="Remove Transport">&times;</button></li>
+                        <li>Entertainment<button type="button" class="chip-remove" aria-label="Remove Entertainment">&times;</button></li>
+                        <li>Fees<button type="button" class="chip-remove" aria-label="Remove Fees">&times;</button></li>
+                        <li>Other<button type="button" class="chip-remove" aria-label="Remove other">&times;</button></li>
+                    </ul>
+
+                    <div class="add-category">
+                        <div class="field grow">
+                            <label for="new-category">New category</label>
+                            <input type="text" id="new-category" placeholder="Letters, spaces and hyphens" autocomplete="off" aria-describedby="new-category-error">
+                        </div>
+                        <button type="button" class="btn btn-primary" id="add-category-btn">Add</button>
+                    </div>
+                    <p id="new-category-error" class="error" aria-live="polite"></p>
+                </div>
+
+                <div class="card">
+                    <h3>Your data</h3>
+                    <div class="button-row">
+                        <button type="button" class="btn btn-outline" id="export-btn">Export JSON</button>
+                        <button type="button" class="btn btn-danger-outline" id="reset-btn">Reset everything</button>
+                    </div>
+                    
+                    <div class="field">
+                        <label for="import-file">Import JSON file</label>
+                        <input type="file" id="import-file" accept=".json,application/json">
+                    </div>
+                    <p id="data-status" class="status" role="status"></p>
+                    <label class="check">
+                        <input type="checkbox" id="theme-toggle" role="switch">
+                        <span>Dark mode</span>
+                    </label>
+                </div>
+
+            </div>
+         </section>
+
          
     </main>
 </body>
