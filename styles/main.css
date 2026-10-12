@@ -89,9 +89,13 @@ code {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 16px;
     background: var(--dark);
     color: white;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 64px;
+    padding: 0 16px;
 }
 
 .brand {
@@ -164,6 +168,7 @@ main:focus {
 
 main > section {
     margin-bottom: 40px;
+    scroll-margin-top: 80px;
 }
 
 .lead {
@@ -579,7 +584,7 @@ mark {
 
     .site-header {
         grid-area: header;
-        padding: 16px 28px;
+        padding: 0 28px;
     }
 
     .site-nav {
@@ -601,6 +606,8 @@ mark {
     .site-nav ul {
         display: block;
         padding: 16px 12px;
+        position: sticky;
+        top: 64px;
     }
 
     .site-nav a {
