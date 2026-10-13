@@ -30,7 +30,7 @@ function setStatus(text, isError) {
 function readForm() {
     const data = {};
     for (const name of fieldName) {
-        data[name] = getInput(name).Value;
+        data[name] = getInput(name).value;
     }
 
     return data;
