@@ -29,14 +29,14 @@ function setStatus(text, isError) {
 
 function readForm() {
     const data = {};
-    for (const name of fieldNames) {
+    for (const name of fieldName) {
         data[name] = getInput(name).Value;
     }
 
     return data;
 }
 
-for (const name of fieldNames) {
+for (const name of fieldName) {
     const input = getInput(name);
 
     input.addEventListener('input', () => {
@@ -57,12 +57,12 @@ form.addEventListener('submit', (event) => {
 
     const result = validateRecord(readForm());
 
-    for (const name of fieldNames) {
+    for (const name of fieldName) {
         showResult(name, result.fields[name]);
     }
 
     if (!result.valid) {
-        const problems = fieldNames.filter((name) => !result.fields[name].valid);
+        const problems = fieldName.filter((name) => !result.fields[name].valid);
         const word = problems.length === 1 ? 'problem' : 'problems';
         setStatus('Please fix ' + problems.length + ' ' + word + ' before saving.', true);
 
@@ -80,7 +80,7 @@ form.addEventListener('submit', (event) => {
 });
 
 form.addEventListener('reset', () => {
-    for (const name of fieldNames) {
+    for (const name of fieldName) {
         clearField(name);
     }
     setStatus('', false);

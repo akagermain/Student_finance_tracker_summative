@@ -1,9 +1,9 @@
 :root {
-    --dark: #10302b;
+    --dark: #0a417d;
     --grey: #4a635e;
     --light: #eef2ee;
-    --green: #1fa38a;
-    --green-dark: #0e6b5a;
+    --green: #2a76a9;
+    --green-dark: #11477f;
     --amber: #f2a33a;
     --red: #d6453d;
     --red-dark: #a4261f;
@@ -142,7 +142,7 @@ code {
 }
 
 .site-nav a:hover {
-    background: #1b4a42;
+    background: #2a76a9;
 }
 
 .site-nav svg {
@@ -227,7 +227,7 @@ main > section {
 }
 
 .btn-primary:hover {
-    background: #1b4a42;
+    background: #2a76a9;
 }
 
 .btn-outline {
@@ -237,19 +237,34 @@ main > section {
 }
 
 .btn-outline:hover {
-    background: #e3ede8;
+    background: #e3e5ed;
 }
 
 .btn-danger {
     background: transparent;
     color: var(--red-dark);
-    text-decoration: underline;
+    text-decoration: none;
+    border: 1.5px solid;
+    border-radius: 12px;
+}
+
+.btn-danger:hover {
+    background: #ede3e5;
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
 }
 
 .btn-danger-outline {
     background: transparent;
     color: var(--red-dark);
     border-color: var(--red-dark);
+}
+
+.btn-danger-outline:hover {
+    background: #ede3e5;
 }
 
 .btn-small {
