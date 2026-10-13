@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocketful tests</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 720px;
+            margin: 24px auto;
+            padding: 0 16px;
+            line-height: 1.5;
+        }
+
+        #results {
+            list-style: none;
+            padding: 0;
+        }
+
+        #results li {
+            padding: 4px 0;
+        }
+
+        .group {
+            margin-top: 16px;
+            font-weight: bold;
+        }
+
+        .pass {
+            color: #0e6b5a;
+        }
+
+        .fail {
+            color: #a4261f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pocketful test</h1>
+    <p id="summary" role="status">Running tests</p>
+    <ul id="results"></ul>
+
+    <script type="module" src="tests/validators.test.js"></script>
+</body>
+</html>
