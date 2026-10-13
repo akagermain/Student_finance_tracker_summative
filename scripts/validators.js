@@ -7,7 +7,7 @@ export const PATTERNS = {
 };
 
 function pass(value) {
-    return {valid: true, meassge: '', value: value };
+    return {valid: true, message: '', value: value };
 }
 
 function fail(message) {
@@ -15,11 +15,11 @@ function fail(message) {
 }
 
 function isRealDate(day, month, year) {
-    const date = new Date(Date.UTC(day, month - 1, year));
+    const date = new Date(Date.UTC(year, month - 1, day));
     return (
-        date.getUTCDate() === day &&
-        date.getUTCDate() === month - 1 &&
-        date.getUTCDate() === year
+        date.getUTCFullYear() === year &&
+        date.getUTCMonth() === month - 1 &&
+        date.getUTCDate() === day
     );
 }
 
@@ -33,7 +33,7 @@ export function validateDescription(text) {
     }
 
     const cleaned =  text.replace(/\s{2,}/g, ' ');
-    const repeated = cleaned.match(PATTERNS.duplicatedWord);
+    const repeated = cleaned.match(PATTERNS.duplicateWord);
     if (repeated) {
         return fail('Repeated word: "' + repeated[0] + '". Is that a typo?');
     }
@@ -67,7 +67,7 @@ export function validateDate(text) {
     if (!isRealDate(Number(day), Number(month), Number(year))) {
         return fail('That date does not exist. Check the day and month.');
     }
-    return pass(day + '-' + month + '-' + year);
+    return pass(year + '-' + month + '-' + day);
 }
 
 export function validateCategory(text) {

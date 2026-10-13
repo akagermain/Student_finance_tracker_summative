@@ -10,7 +10,7 @@ import {
 const list = document.querySelector('#results');
 const summary = document.querySelector('#summary');
 let passed = 0;
-let fialed = 0;
+let failed = 0;
 
 function group(title) {
     const li = document.createElement('li');
@@ -23,11 +23,11 @@ function check(name, condition) {
     const li = document.createElement('li');
     if (condition) {
         li.className = 'pass';
-        li.textContent = 'PASS' + name;
+        li.textContent = 'PASS ' + name;
         passed++;
     } else {
         li.className = 'fail';
-        li.textContent = 'FAIL' + name;
+        li.textContent = 'FAIL ' + name;
         failed++;
     }
     list.append(li);
@@ -98,7 +98,7 @@ const goodFrom = validateRecord({
     category: 'food'
 });
 check('a good form is valid', goodFrom.valid);
-check('amount value is number', goodFrom.fields.amount.value === 25000);
+check('amount value is number', goodFrom.fields.amount.value === 2500);
 
 const badForm = validateRecord({
     description: 'Lunch at cafeteria',
