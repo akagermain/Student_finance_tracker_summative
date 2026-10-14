@@ -140,10 +140,10 @@
                     </select>
                 </div>
                 
-                <!-- <label class="check">
+                <label class="check">
                     <input type="checkbox" id="search-case" checked>
                     <span>Ignore case</span>
-                </label> -->
+                </label>
                 <p id="search-help" class="hint">Try <code>coffee, bus</code></p>
                 <p id="search-status" class="status" role="status"></p>
             </div>
@@ -161,31 +161,10 @@
                         </tr>
                     </thead>
 
-                    <tbody id="records-body">
-                        <tr>
-                            <td data-label="Date" class="mono">09-10-2026</td>
-                            <td data-label="Description">Lunch at cafeteria</td>
-                            <td data-label="Category"><span class="chip">Food</span></td>
-                            <td data-label="Amount" class="num mono">2,500</td>
-                            <td data-label="Actions" class="actions">
-                                <button type="button" class="btn btn-small btn-outline" aria-label="Edit Lunch at cafeteria">Edit</button>
-                                <button type="button" class="btn btn-small btn-danger" aria-label="Delete Lunch at cafeteria">Delete</button>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td data-label="Date" class="mono">09-10-2026</td>
-                            <td data-label="Description">Bus</td>
-                            <td data-label="Category"><span class="chip">Transport</span></td>
-                            <td data-label="Amount" class="num mono">9,000</td>
-                            <td data-label="Actions" class="actions">
-                                <button type="button" class="btn btn-small btn-outline" aria-label="Edit bus pass">Edit</button>
-                                <button type="button" class="btn btn-small btn-danger" aria-label="Delete bus pass">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="records-body"></tbody>
                 </table>
             </div>
+            <p id="records-status" class="status" role="status"></p>
          </section>
 
 
@@ -226,6 +205,7 @@
                     <input type="text" id="category" list="category-options" autocomplete="off" aria-describedby="category-hint category-error">
                     <datalist id="category-options">
                         <option value="Food"></option>
+                        <option value="Drink"></option>
                         <option value="Books"></option>
                         <option value="Transport"></option>
                         <option value="Entertainment"></option>
@@ -358,6 +338,17 @@
     <footer class="site-footer">
         <p>&copy; 2026 Iradukunda Akayezu Germain &middot; Student Finance Tracker</p>
     </footer>
+
+    <dialog id="delete-dialog" aria-labelledby="delete-title">
+        <form method="dialog">
+            <h3 id="delete-title">Delete this record?</h3>
+            <p id="delete-text"></p>
+            <div class="form-actions">
+                <button type="submit" value="confirm" class="btn btn-danger-outline">Yes, delete</button>
+                <button type="submit" value="Cancel" class="btn btn-outline">Keep it</button>
+            </div>
+        </form>
+    </dialog>
 
     <script type="module" src="./scripts/main.js"></script>
 

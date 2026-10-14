@@ -1,4 +1,6 @@
 import {validators, validateRecord} from './validators.js';
+import { addRecord, setRecords } from './state.js'
+import { initRecordsView } from './ui.js';
 
 const form = document.querySelector('#record-form');
 const status = document.querySelector('#form-status');
@@ -70,13 +72,16 @@ form.addEventListener('submit', (event) => {
         return;
     }
 
-    console.log('valid record:', {
+    const record = addRecord({
         description: result.fields.description.value,
         amount: result.fields.amount.value,
         date: result.fields.date.value,
         category: result.fields.category.value
     });
-    setStatus('All fields are valid. Saving is added in a later milestone.', false);
+
+    form.reset();
+    setStatus('Saved "' + record.description + '". You can see it in Records.', false);
+    getInput('description').focus();
 });
 
 form.addEventListener('reset', () => {
@@ -85,3 +90,18 @@ form.addEventListener('reset', () => {
     }
     setStatus('', false);
 });
+
+async function loadseed() {
+    try {
+        const response = await fetch('seed.json');
+        if (!response.ok) {
+            throw new Error('Seed.json answered with ' + response.status);
+        }
+        setRecords(await response.json());
+    } catch (error) {
+        console.error('Could not find seed.json', error);
+    }
+}
+
+initRecordsView();
+loadseed();
