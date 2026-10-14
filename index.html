@@ -83,7 +83,7 @@
             <div class="dash-grid">
                 <div class="card cap" id="cap-card" data-state="calm">
                     <h3 id="cap-title">Monthly cap</h3>
-                    <p class="cap_numbers"><span id="cap-spent" class="mono">0</span> of <span id="cap-limit" class="mono">60,000</span> RWF</p>
+                    <p class="cap-numbers"><span id="cap-spent" class="mono">0</span> of <span id="cap-limit" class="mono">60,000</span> RWF</p>
                     <progress class="meter" id="cap-meter" max="100" value="0" aria-labelledby="cap-title">0%</progress>
                     <p id="cap-message-polite" class="cap-message" aria-live="polite"></p>
                     <p id="cap-message-assertive" class="cap-message" aria-live="assertive"></p>
@@ -91,7 +91,7 @@
 
                 <div class="card">
                     <h3>Last 7 days</h3>
-                    <ol class="class" id="trend" aria-label="Spending fro each the last 7 days">
+                    <ol class="bars" id="trend" aria-label="Spending for each the last 7 days">
                         <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 1</span></li>
                         <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 2</span></li>
                         <li><span class="bar-value">0</span><span class="bar-track"><span class="bar" style="--h: 0%"></span></span><span class="bar-day">Day 3</span></li>
@@ -119,7 +119,7 @@
 
 
         <!-- ========= Records ========= -->
-         <section id="records" aria-labelledby="record-title">
+         <section id="records" aria-labelledby="records-title">
             <h2 id="records-title">Records</h2>
             <p class="lead">Find anything</p>
 
@@ -136,7 +136,7 @@
                         <option value="description-asc">Description A to Z</option>
                         <option value="description-desc">Description Z to A</option>
                         <option value="amount-desc">Amount, high to low</option>
-                        <option value="amount-desc">Amount, low to high</option>
+                        <option value="amount-asc">Amount, low to high</option>
                     </select>
                 </div>
                 
@@ -157,7 +157,7 @@
                             <th scope="col">Description</th>
                             <th scope="col">Category</th>
                             <th scope="col" class="num">Amount</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col" class="actions-head">Actions</th>
                         </tr>
                     </thead>
 
@@ -190,14 +190,14 @@
                     <label for="amount"> Amount <span class="currency-label">RWF</span></label>
                     <input type="text" id="amount" inputmode="decimal" autocomplete="off" aria-describedby="amount-hint amount-error">
                     <p id="amount-hint" class="hint">Numbers only up to 2 decimals.</p>
-                    <p id="amount-error" class="erro" aria-live="polite"></p>
+                    <p id="amount-error" class="error" aria-live="polite"></p>
                 </div>
 
                 <div class="field">
                     <label for="date">Date</label>
                     <input type="text" id="date" inputmode="numeric" placeholder="DD-MM-YYYY" autocomplete="off" aria-describedby="date-hint date-error">
                     <p id="date-hint" class="hint">Format: DD-MM-YYYY</p>
-                    <P id="date-error" class="error" aria-live="polite"></P>
+                    <p id="date-error" class="error" aria-live="polite"></p>
                 </div>
 
                 <div class="field span-2">

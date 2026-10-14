@@ -47,7 +47,7 @@ export function appendHighlighted(parent, text, regex) {
     const globalRegex = new RegExp(regex.source, flags);
     let lastEnd = 0;
 
-    for (const match of text.matchAll(globaleRegex)) {
+    for (const match of text.matchAll(globalRegex)) {
         if (match[0] === '') {
             continue;
         }

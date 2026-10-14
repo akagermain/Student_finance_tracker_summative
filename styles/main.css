@@ -55,7 +55,7 @@ code {
 }
 
 .mono {
-    font-family: "IBM plex Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
 }
 
 .sr-only {
@@ -112,7 +112,7 @@ code {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 72;
+    height: 72px;
     background: var(--dark);
 }
 
@@ -252,10 +252,7 @@ main > section {
     background: #ede3e5;
 }
 
-.actions {
-    display: flex;
-    gap: 5px;
-}
+
 
 .btn-danger-outline {
     background: transparent;
@@ -525,7 +522,7 @@ mark {
     content: attr(data-label);
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--gey);
+    color: var(--grey);
 }
 
 .records-table td.actions {
@@ -689,6 +686,14 @@ mark {
 
     .records-table td.actions {
         text-align: right;
+    }
+
+    .records-table th.actions-head {
+        text-align: right;
+    }
+
+    .records-table td.actions .btn + .btn {
+        margin-left: 8px;
     }
 
     .table-wrap {

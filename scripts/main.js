@@ -15,7 +15,7 @@ function getError(name) {
 }
 
 function showResult(name, result) {
-    getInput(name).setAttribute('aria_invalid', String(!result.valid));
+    getInput(name).setAttribute('aria-invalid', String(!result.valid));
     getError(name).textContent = result.message;
 }
 

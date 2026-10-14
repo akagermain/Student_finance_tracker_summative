@@ -1,0 +1,15 @@
+[
+  { "id": "rec_0001", "description": "Lunch at cafeteria", "amount": 2500, "category": "Food", "date": "09-10-2026", "createdAt": "2026-10-09T10:15:00.000Z", "updatedAt": "2026-10-09T10:15:00.000Z" },
+  { "id": "rec_0002", "description": "Chemistry textbook", "amount": 18000, "category": "Books", "date": "06-10-2026", "createdAt": "2026-10-06T08:30:00.000Z", "updatedAt": "2026-10-06T08:30:00.000Z" },
+  { "id": "rec_0003", "description": "Bus pass", "amount": 9000, "category": "Transport", "date": "07-10-2026", "createdAt": "2026-10-07T07:00:00.000Z", "updatedAt": "2026-10-07T07:00:00.000Z" },
+  { "id": "rec_0004", "description": "Coffee with friends", "amount": 1750, "category": "Entertainment", "date": "08-10-2026", "createdAt": "2026-10-08T15:45:00.000Z", "updatedAt": "2026-10-08T15:45:00.000Z" },
+  { "id": "rec_0005", "description": "Printing fees", "amount": 1500, "category": "Fees", "date": "05-10-2026", "createdAt": "2026-10-05T12:00:00.000Z", "updatedAt": "2026-10-05T12:00:00.000Z" },
+  { "id": "rec_0006", "description": "Groceries", "amount": 6500, "category": "Food", "date": "04-10-2026", "createdAt": "2026-10-04T17:20:00.000Z", "updatedAt": "2026-10-04T17:20:00.000Z" },
+  { "id": "rec_0007", "description": "Movie night", "amount": 4000, "category": "Entertainment", "date": "02-10-2026", "createdAt": "2026-10-02T19:00:00.000Z", "updatedAt": "2026-10-02T19:00:00.000Z" },
+  { "id": "rec_0008", "description": "Data bundle", "amount": 5000, "category": "Other", "date": "01-10-2026", "createdAt": "2026-10-01T09:10:00.000Z", "updatedAt": "2026-10-01T09:10:00.000Z" },
+  { "id": "rec_0009", "description": "Leap day pizza", "amount": 3200.5, "category": "Food", "date": "29-02-2024", "createdAt": "2024-02-29T18:30:00.000Z", "updatedAt": "2024-02-29T18:30:00.000Z" },
+  { "id": "rec_0010", "description": "Tuition instalment", "amount": 1250000, "category": "Fees", "date": "15-09-2026", "createdAt": "2026-09-15T09:00:00.000Z", "updatedAt": "2026-09-15T09:00:00.000Z" },
+  { "id": "rec_0011", "description": "Sweets & snacks <promo>", "amount": 0.5, "category": "Food", "date": "31-12-2025", "createdAt": "2025-12-31T20:00:00.000Z", "updatedAt": "2025-12-31T20:00:00.000Z" },
+  { "id": "rec_0012", "description": "Mom's birthday gift", "amount": 12000.99, "category": "Other", "date": "20-09-2026", "createdAt": "2026-09-20T11:00:00.000Z", "updatedAt": "2026-09-20T11:00:00.000Z" },
+  { "id": "rec_0013", "description": "Tea and coffee break", "amount": 800, "category": "Food", "date": "10-10-2026", "createdAt": "2026-10-10T10:30:00.000Z", "updatedAt": "2026-10-10T10:30:00.000Z" }
+]

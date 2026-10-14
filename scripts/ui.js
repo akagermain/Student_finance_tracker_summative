@@ -8,7 +8,7 @@ const caseBox = document.querySelector('#search-case');
 const sortSelect = document.querySelector('#sort-select');
 const searchStatus = document.querySelector('#search-status');
 const recordsStatus = document.querySelector('#records-status');
-const tableBody = document.querySelector('records-body');
+const tableBody = document.querySelector('#records-body');
 const deleteDialog = document.querySelector('#delete-dialog');
 const deleteText = document.querySelector('#delete-text');
 
@@ -81,11 +81,12 @@ function makeViewRow(record, regex) {
 
     const actionsCell = makeCell('Actions', 'actions');
     actionsCell.append(
-        makeButton('Edit', 'edit', 'btn-outline', 'Edit' + record.description),
-        makeButton('Delete', 'delete', 'btn-danger', 'Delete' + record.description)
+        makeButton('Edit', 'edit', 'btn-outline', 'Edit ' + record.description),
+        makeButton('Delete', 'delete', 'btn-danger', 'Delete ' + record.description)
     );
 
     row.append(dataCell, descriptionCell, categoryCell, amountCell, actionsCell);
+    return row;
 }
 
 
@@ -126,7 +127,7 @@ function makeEditRow(record) {
     error.className = 'error';
     error.setAttribute('aria-live', 'polite');
     actionsCell.append(
-        makeButton('Save', 'save-edit', 'btn-primary', 'Save changes to' + record.description),
+        makeButton('Save', 'save-edit', 'btn-primary', 'Save changes to ' + record.description),
         makeButton('Cancel', 'cancel-edit', 'btn-outline'),
         error
     );
@@ -240,7 +241,7 @@ function askDelete(id) {
 
 function handleDeleteClosed() {
     const id = pendingDeleteId;
-    pendingDeletedId = null;
+    pendingDeleteId = null;
 
     if (deleteDialog.returnValue === 'confirm') {
         const record = getRecords().find((item) => item.id === id);

@@ -1,6 +1,6 @@
 export function dateToNumber(text) {
-    const [day, month, year] = text.split('-').map(Number);
-    return year * 1000 + month * 100 + day;
+    const [year, month, day] = text.split('-').map(Number);
+    return year * 10000 + month * 100 + day;
 }
 
 export function sortRecords(records, mode) {

@@ -23,7 +23,7 @@ export function setRecords(list) {
 function makeId() {
     let highest = 0;
     for (const record of records) {
-        const number = Number(record.id.replace('id_', ''));
+        const number = Number(record.id.replace(/\D/g, ''));
         if (number > highest) {
             highest = number;
         }

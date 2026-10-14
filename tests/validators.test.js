@@ -91,14 +91,14 @@ check('does not match different words', !PATTERNS.duplicateWord.test('then the c
 
 
 group('Whole form');
-const goodFrom = validateRecord({
+const goodForm = validateRecord({
     description: 'Lunch at cafeteria',
     amount: '2500',
     date: '09-10-2026',
     category: 'food'
 });
-check('a good form is valid', goodFrom.valid);
-check('amount value is number', goodFrom.fields.amount.value === 2500);
+check('a good form is valid', goodForm.valid);
+check('amount value is number', goodForm.fields.amount.value === 2500);
 
 const badForm = validateRecord({
     description: 'Lunch at cafeteria',
