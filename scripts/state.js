@@ -11,6 +11,20 @@ function notify() {
     }
 }
 
+let settings = {
+    cap: 60000,
+    baseCurrency: 'RWF'
+};
+
+export function getSettings() {
+    return settings;
+}
+
+export function updateSettings(values) {
+    settings = { ...settings, ...values };
+    notify();
+}
+
 export function getRecords() {
     return records;
 }

@@ -1,6 +1,8 @@
 import {validators, validateRecord} from './validators.js';
 import { addRecord, setRecords } from './state.js'
 import { initRecordsView } from './ui.js';
+import { initDashboard } from './dashboard.js';
+import { initSettingsView} from './settings.js'
 
 const form = document.querySelector('#record-form');
 const status = document.querySelector('#form-status');
@@ -104,4 +106,6 @@ async function loadseed() {
 }
 
 initRecordsView();
+initDashboard();
+initSettingsView();
 loadseed();

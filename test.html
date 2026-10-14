@@ -38,10 +38,17 @@
     </style>
 </head>
 <body>
-    <h1>Pocketful test</h1>
-    <p id="summary" role="status">Running tests</p>
-    <ul id="results"></ul>
+    <main>
+        <h1>Pocketful test</h1>
+        <p id="summary" role="status">Running tests</p>
+        <ul id="results"></ul>
+
+        <h2>Dashboard maths (stats.js)</h2>
+        <p id="stats-summary" role="status"> Running tests....</p>
+        <ul id="stats-results"></ul>
+    </main>
 
     <script type="module" src="tests/validators.test.js"></script>
+    <script type="module" src="tests/stats.test.js"></script>
 </body>
 </html>
