@@ -6,6 +6,7 @@ import {
     topCategory,
     currentMonthTotal,
     lastSevenDays,
+    convert,
     capStatus,
     formatMoney,
     formatCompact
@@ -14,6 +15,7 @@ import {
 const statCount = document.querySelector('#stat-count');
 const statSum = document.querySelector('#stat-sum');
 const statTop = document.querySelector('#stat-top');
+const statConverted = document.querySelector('#stat-converted');
 
 const capCard = document.querySelector('#cap-card');
 const capMonth = document.querySelector('#cap-month');
@@ -33,14 +35,26 @@ function setText(element, text) {
     }
 }
 
-function renderStats(records, currency) {
+function renderStats(records, settings) {
+    const total = totalAmount(records);
     setText(statCount, String(records.length));
-    setText(statSum, formatMoney(totalAmount(records)));
+    setText(statSum, formatMoney(total));
+
+    const parts = [];
+    for (const code of Object.keys(settings.rates)) {
+        const rate = settings.rates[code];
+        if (rate > 0) {
+            parts.push('\u2248 ' + formatMoney(convert(total, rate)) + ' ' + code);
+        }
+    }
+    setText(statConverted, parts.join(' \u00b7 '));
 
     const top = topCategory(records);
-    setText(statTop, top ? top.name: 'None yet');
-    statTop.title = top ? top.name + ': ' + formatMoney(top.total) + ' ' + currency : '';
+    setText(statTop, top ? top.name : 'None yet');
+    setTop.title = top ? top.name + ': ' + formatMoney(top.total) + ' ' + settings.baseCurrency : '';
 }
+
+
 
 function renderCap(records, settings, today) {
     const spent = currentMonthTotal(records, today);
@@ -102,7 +116,7 @@ function renderLatest(records) {
 
         const description = document.createElement('span');
         description.className = 'latest-description';
-        description.textContent = 'reccord.description';
+        description.textContent = record.description;
 
         const category = document.createElement('span');
         category.className = 'chip';

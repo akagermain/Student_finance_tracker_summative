@@ -67,7 +67,7 @@ export function validateDate(text) {
     if (!isRealDate(Number(day), Number(month), Number(year))) {
         return fail('That date does not exist. Check the day and month.');
     }
-    return pass(year + '-' + month + '-' + day);
+    return pass(value);
 }
 
 export function validateCategory(text) {

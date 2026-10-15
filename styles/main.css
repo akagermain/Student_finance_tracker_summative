@@ -288,7 +288,7 @@ select {
     width: 100%;
     min-height: 48px;
     padding: 0 14px;
-    border: 1.5px solid #8ca39b;
+    border: 1.5px solid #6b8780;
     border-radius: 12px;
     background: white;
     color: var(--dark);
@@ -821,4 +821,102 @@ dialog h3 {
     .records-table .empty-row td {
         text-align: center;
     }
+}
+
+.cap[data-state="careful"] .cap-message {
+    color: #6b4000;
+}
+
+.Cap[data-state="over"] .cap-message {
+    color: var(--red-dark);
+}
+
+.latest li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 12px;
+}
+
+.latest-description {
+    flex: 1;
+    min-width: 120px;
+}
+
+#app-notice:empty {
+    display: none;
+}
+
+.stat dd.stat-note {
+    margin-top: 2px;
+    font-size: 0.75rem;
+    color: var(--grey);
+}
+
+.stat dd.stat-note:empty {
+    display: none;
+}
+
+.base-currency  {
+    margin: 0 0 12px;
+}
+
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --dark : #e6f0ec;
+    --light: #0f1d1a;
+    --grey: #a9c4bc;
+    --green-dark: #7fe0c8;
+    --red-dark: #ff9a92;
+}
+
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .stat,
+:root[data-theme="dark"] .records-table,
+:root[data-theme="dark"] .records-table tr,
+:root[data-theme="dark"] dialog,
+:root[data-theme="dark"] input[type="text"],
+:root[data-theme="dark"] input[type="file"],
+:root[data-theme="dark"] select {
+    background: #17302b;
+}
+
+:root[data-theme="dark"] .site-header,
+:root[data-theme="dark"] .site-nav {
+    background: #091512;
+}
+
+:root[data-theme="dark"] .btn-primary {
+    background: #7fe0c8;
+    color: #0f1d1a;
+}
+
+:root[data-theme="dark"] .btn-primary:hover {
+    background: #a5eddb;
+}
+
+:root[data-theme="dark"] .btn-outline:hover,
+:root[data-theme="dark"] code,
+:root[data-theme="dark"] .chip,
+:root[data-theme="dark"] .chips li  {
+    background: #24433c;
+}
+
+:root[data-theme="dark"] mark,
+:root[data-theme="dark"] .skip-link {
+    color: #10302b;
+}
+
+:root[data-theme="dark"] .cap[data-state="careful"] .cap-message {
+    color: #f2c46b;
+}
+
+:root[data-theme="dark"] .latest li,
+:root[data-theme="dark"] .records-table tr {
+    border-bottom-color: #2e4d46;
+}
+
+:root[data-theme="dark"] :focus-visible {
+    outline-color: #8ab4ff;
 }

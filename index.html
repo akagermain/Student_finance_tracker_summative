@@ -6,7 +6,7 @@
     <title>Pocketful | Student Finance Tracker</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -61,6 +61,7 @@
 <!-- ========== DASHBOARD ========== -->
 
     <main id="main" tabindex="-1">
+        <p id="app-notice" class="status has-error" role="status"></p>
         <section id="dashboard" aria-labelledby="dashboard-title">
             <h2 id="dashboard-title">Dashboard</h2>
             <p class="lead">Your Spending at glance.</p>
@@ -73,6 +74,7 @@
                 <div class="stat">
                     <dt>Total Spent</dt>
                     <dd id="stat-sum">0</dd>
+                    <dd id="stat-converted" class="stat-note"></dd>
                 </div>
                 <div class="stat">
                     <dt>Top category</dt>
@@ -246,41 +248,28 @@
 
                 <div class="card">
                     <h3>Currencies</h3>
-                    <div class="field">
-                        <label for="base-currency">Base currency</label>
-                        <select id="base-currency">
-                            <option value="RWF" selected>RWF</option>
-                            <option value="USD">USD</option>
-                            <option value="EUR">EUR</option>
-                        </select>
-                    </div>
-
+                    <p class="base-currency">Base Currency: <strong class="mono">RWF</strong></p>
                     <fieldset class="rates">
                         <legend>Exchange rates (you type them)</legend>
                         <div class="rate-row">
                             <label for="rate-usd">1 USD =</label>
-                            <input type="text" id="rate-usd" inputmode="decimal" placeholder="Your rate" autocomplete="off" aria-describedby="rate-usd-unit">
+                            <input type="text" id="rate-usd" inputmode="decimal" placeholder="Your rate" autocomplete="off" aria-describedby="rate-usd-unit rate-usd-error">
                             <span id="rate-usd-unit">RWF</span>
                         </div>
 
+                        <p id="rate-usd-error" class="error" aria-live="polite"></p>
                         <div class="rate-row">
                             <label for="rate-eur">1 EUR =</label>
-                            <input type="text" id="rate-eur" inputmode="decimal" placeholder="Your rate" autocomplete="off" aria-describedby="rate-eur-unit">
+                            <input type="text" id="rate-eur" inputmode="decimal" placeholder="Your rate" autocomplete="off" aria-describedby="rate-eur-unit rate-eur-error">
                             <span id="rate-eur-unit">RWF</span>
                         </div>
+                        <p id="rate-eur-error" class="error" aria-live="polite"></p>
                     </fieldset>
                 </div>
 
                 <div class="card">
                     <h3>Categories</h3>
-                    <ul class="chips" id="category-list">
-                        <li>Food<button type="button" class="chip-remove" aria-label="Remove Food">&times;</button></li>
-                        <li>Books<button type="button" class="chip-remove" aria-label="Remove Books">&times;</button></li>
-                        <li>Transport<button type="button" class="chip-remove" aria-label="Remove Transport">&times;</button></li>
-                        <li>Entertainment<button type="button" class="chip-remove" aria-label="Remove Entertainment">&times;</button></li>
-                        <li>Fees<button type="button" class="chip-remove" aria-label="Remove Fees">&times;</button></li>
-                        <li>Other<button type="button" class="chip-remove" aria-label="Remove other">&times;</button></li>
-                    </ul>
+                    <ul class="chips" id="category-list"></ul>
 
                     <div class="add-category">
                         <div class="field grow">
@@ -290,6 +279,7 @@
                         <button type="button" class="btn btn-primary" id="add-category-btn">Add</button>
                     </div>
                     <p id="new-category-error" class="error" aria-live="polite"></p>
+                    <p id="category-status" class="status" role="status"></p>
                 </div>
 
                 <div class="card">
@@ -347,6 +337,17 @@
             <div class="form-actions">
                 <button type="submit" value="confirm" class="btn btn-danger-outline">Yes, delete</button>
                 <button type="submit" value="Cancel" class="btn btn-outline">Keep it</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="confirm-dialog" aria-labelledby="confirm-title">
+        <form method="dialog">
+            <h3 id="confirm-title"></h3>
+            <p id="confirm-text"></p>
+            <div class="form-actions">
+                <button type="submit" value="confirm" id="confirm-yes" class="btn btn-danger-outline"></button>
+                <button type="submit" value="cancel" class="btn btn-outline">Cancel</button>
             </div>
         </form>
     </dialog>

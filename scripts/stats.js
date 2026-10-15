@@ -24,6 +24,10 @@ export function formatCompact(number) {
     return String(Math.round(number));
 }
 
+export function convert(amount, rate) {
+    return round2(amount / rate);
+}
+
 export function totalAmount(records) {
     let sum = 0;
     for (const record of records) {

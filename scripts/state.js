@@ -11,10 +11,17 @@ function notify() {
     }
 }
 
-let settings = {
-    cap: 60000,
-    baseCurrency: 'RWF'
-};
+function defaultSettings() {
+    return {
+        cap: 60000,
+        baseCurrency: 'RWF',
+        rates: { USD: null, EUR: null },
+        categories: ['Food', 'Books', 'Transport', 'Entertainment', 'Fees', 'Other'],
+        theme: 'light'
+    };
+}
+
+let settings = defaultSettings();
 
 export function getSettings() {
     return settings;
@@ -22,6 +29,11 @@ export function getSettings() {
 
 export function updateSettings(values) {
     settings = { ...settings, ...values };
+    notify();
+}
+
+export function setSettings(values) {
+    settings = { ...defaultSettings(), ...values };
     notify();
 }
 
@@ -37,12 +49,12 @@ export function setRecords(list) {
 function makeId() {
     let highest = 0;
     for (const record of records) {
-        const number = Number(record.id.replace(/\D/g, ''));
+        const number = Number(record.id.replace('rec_', ''));
         if (number > highest) {
             highest = number;
         }
     }
-    return 'id_' + String(highest + 1).padStart(4, '0');
+    return 'rec_' + String(highest + 1).padStart(4, '0');
 }
 
 export function addRecord(values) {
