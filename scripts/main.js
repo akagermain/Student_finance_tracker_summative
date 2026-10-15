@@ -125,8 +125,8 @@ async function start() {
     }
     setRecords(records);
 
-    subscribe(autoSave);
-    autoSave();
+    subscribe(autosave);
+    autosave();
 
     if (problem) {
         notice.textContent = problem;

@@ -51,7 +51,7 @@ function renderStats(records, settings) {
 
     const top = topCategory(records);
     setText(statTop, top ? top.name : 'None yet');
-    setTop.title = top ? top.name + ': ' + formatMoney(top.total) + ' ' + settings.baseCurrency : '';
+    statTop.title = top ? top.name + ': ' + formatMoney(top.total) + ' ' + settings.baseCurrency : '';
 }
 
 
@@ -135,7 +135,7 @@ export function renderDashboard(today) {
     const records = getRecords();
     const settings = getSettings();
 
-    renderStats(records, settings.baseCurrency);
+    renderStats(records, settings);
     renderCap(records, settings, today);
     renderTrend(records, settings.baseCurrency, today);
     renderLatest(records);

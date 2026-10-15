@@ -68,7 +68,7 @@ function renderCategories(categories) {
 function renderSettings() {
     const settings = getSettings();
 
-    setValueIfIdle(capInput, string(settings.cap));
+    setValueIfIdle(capInput, String(settings.cap));
     for (const code of Object.keys(rateInputs)) {
         const rate = settings.rates[code];
         setValueIfIdle(rateInputs[code], rate == null ? '' : String(rate));
@@ -142,7 +142,7 @@ function removeCategory(name) {
 
 
 export function initSettingsView() {
-    subscribe('renderSettings');
+    subscribe(renderSettings);
 
     capInput.addEventListener('input', handleCapInput);
 

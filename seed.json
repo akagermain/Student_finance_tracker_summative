@@ -9,7 +9,7 @@
   { "id": "rec_0008", "description": "Data bundle", "amount": 5000, "category": "Other", "date": "01-10-2026", "createdAt": "2026-10-01T09:10:00.000Z", "updatedAt": "2026-10-01T09:10:00.000Z" },
   { "id": "rec_0009", "description": "Leap day pizza", "amount": 3200.5, "category": "Food", "date": "29-02-2024", "createdAt": "2024-02-29T18:30:00.000Z", "updatedAt": "2024-02-29T18:30:00.000Z" },
   { "id": "rec_0010", "description": "Tuition instalment", "amount": 1250000, "category": "Fees", "date": "15-09-2026", "createdAt": "2026-09-15T09:00:00.000Z", "updatedAt": "2026-09-15T09:00:00.000Z" },
-  { "id": "rec_0011", "description": "Sweets & snacks <promo>", "amount": 0.5, "category": "Food", "date": "31-12-2025", "createdAt": "2025-12-31T20:00:00.000Z", "updatedAt": "2025-12-31T20:00:00.000Z" },
+  { "id": "rec_0011", "description": "Sweets & snacks", "amount": 0.5, "category": "Food", "date": "31-12-2025", "createdAt": "2025-12-31T20:00:00.000Z", "updatedAt": "2025-12-31T20:00:00.000Z" },
   { "id": "rec_0012", "description": "Mom's birthday gift", "amount": 12000.99, "category": "Other", "date": "20-09-2026", "createdAt": "2026-09-20T11:00:00.000Z", "updatedAt": "2026-09-20T11:00:00.000Z" },
   { "id": "rec_0013", "description": "Tea and coffee break", "amount": 800, "category": "Food", "date": "10-10-2026", "createdAt": "2026-10-10T10:30:00.000Z", "updatedAt": "2026-10-10T10:30:00.000Z" }
 ]

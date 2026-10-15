@@ -864,10 +864,10 @@ dialog h3 {
 
 :root[data-theme="dark"] {
     color-scheme: dark;
-    --dark : #e6f0ec;
-    --light: #0f1d1a;
-    --grey: #a9c4bc;
-    --green-dark: #7fe0c8;
+    --dark : #e8edf4;
+    --light: #111827;
+    --grey: #aab7c9;
+    --green-dark: #7db8f0;
     --red-dark: #ff9a92;
 }
 
@@ -879,33 +879,33 @@ dialog h3 {
 :root[data-theme="dark"] input[type="text"],
 :root[data-theme="dark"] input[type="file"],
 :root[data-theme="dark"] select {
-    background: #17302b;
+    background: #1e293b;
 }
 
 :root[data-theme="dark"] .site-header,
 :root[data-theme="dark"] .site-nav {
-    background: #091512;
+    background: #0b2e59;
 }
 
 :root[data-theme="dark"] .btn-primary {
-    background: #7fe0c8;
-    color: #0f1d1a;
+    background: #7db8f0;
+    color: #111827;
 }
 
 :root[data-theme="dark"] .btn-primary:hover {
-    background: #a5eddb;
+    background: #a5d0fa;
 }
 
 :root[data-theme="dark"] .btn-outline:hover,
 :root[data-theme="dark"] code,
 :root[data-theme="dark"] .chip,
 :root[data-theme="dark"] .chips li  {
-    background: #24433c;
+    background: #334155;
 }
 
 :root[data-theme="dark"] mark,
 :root[data-theme="dark"] .skip-link {
-    color: #10302b;
+    color: #0b2e59;
 }
 
 :root[data-theme="dark"] .cap[data-state="careful"] .cap-message {
@@ -914,9 +914,9 @@ dialog h3 {
 
 :root[data-theme="dark"] .latest li,
 :root[data-theme="dark"] .records-table tr {
-    border-bottom-color: #2e4d46;
+    border-bottom-color: #3b4b63;
 }
 
 :root[data-theme="dark"] :focus-visible {
-    outline-color: #8ab4ff;
+    outline-color: #93c5fd;
 }
