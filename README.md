@@ -5,7 +5,7 @@ With this app, you can add expenses, edit or delete them, with a confirmation be
 
 To directly check the web app, below are the website link and demo link, you can click on each to view.
 
-- Live site link: `[Pocketful](https://akagermain.github.io/pocketful/)`
+- Live site link: [Pocketful](https://akagermain.github.io/pocketful/)
 - Demo video: 
 
 ## Features and Regex
