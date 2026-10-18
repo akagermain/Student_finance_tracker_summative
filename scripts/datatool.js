@@ -1,7 +1,8 @@
 import {getRecords, getSettings, setRecords, setSettings, updateSettings } from './state.js';
 import { buildExport, parseImport } from './jsonfile.js';
 import { clearSaved } from './storage.js';
-import { loadSeed} from './seed.js';
+import { loadSeed } from './seed.js';
+import {showToast } from './toast.js'
 
 const MAX_FILE_BYTES = 2 * 1024 * 1024;
 
@@ -50,6 +51,7 @@ function exportJson() {
     URL.revokeObjectURL(url);
 
     setDataStatus('EXported ' + data.records.length + ' records to a JSON file.', false);
+    showToast('EXported ' + data.records.length + 'records.');
 }
 
 
@@ -68,6 +70,7 @@ async function importFile(file) {
         text = await file.text();
     } catch (error) {
         setDataStatus('Import cancelled: that file could not be read. Nothing was changed.', true);
+        showToast('Imported ' + result.records.length + ' records.');
         return;
     }
 

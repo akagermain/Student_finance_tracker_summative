@@ -2,6 +2,7 @@ import { subscribe, getRecords, updateRecord, deleteRecord } from './state.js';
 import { validateRecord } from './validators.js';
 import { compileRegex, recordMatches, appendHighlighted, amountText} from './search.js';
 import { sortRecords } from './sort.js';
+import { showToast } from './toast.js' 
 
 const searchInput = document.querySelector('#search-input');
 const caseBox = document.querySelector('#search-case');
@@ -224,6 +225,7 @@ function saveEdit(id) {
         category: result.fields.category.value
     });
     announce('Saved changes to "' + result.fields.description.value + '".');
+    showToast('Saved changes to "' + result.fields.description.value + '".');
     focusRowButton(id, 'edit');
 }
 
@@ -249,6 +251,7 @@ function handleDeleteClosed() {
         deleteRecord(id);
         announce('Deleted "' + name + '".');
         searchInput.focus();
+        showToast('Deleted "' + name + '".');
     } else {
         focusRowButton(id, 'delete');
     }

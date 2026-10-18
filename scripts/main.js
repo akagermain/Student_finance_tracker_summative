@@ -6,6 +6,8 @@ import { initSettingsView} from './settings.js';
 import { initDataTools } from './datatool.js';
 import { loadSaved, saveAll } from './storage.js'
 import { loadSeed } from './seed.js'
+import { initRouter } from './router.js'
+import { showToast } from './toast.js'
 
 const form = document.querySelector('#record-form');
 const status = document.querySelector('#form-status');
@@ -86,6 +88,7 @@ form.addEventListener('submit', (event) => {
 
     form.reset();
     setStatus('Saved "' + record.description + '". You can see it in Records.', false);
+    showToast('Saved "' + record.description + '".');
     getInput('description').focus();
 });
 
@@ -104,6 +107,7 @@ function autosave() {
 }
 
 async function start() {
+    initRouter();
     initRecordsView();
     initDashboard();
     initSettingsView();

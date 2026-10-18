@@ -546,14 +546,14 @@ mark {
     display: flex;
     align-items: center;
     padding: 0 4px 0 14px;
-    min-height: 40px;
+    min-height: 44px;
     border-radius: 999px;
     background: #e3ede8;
 }
 
 .chip-remove {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     border: 0;
     background: transparent;
     font-size: 1.2rem;
@@ -919,4 +919,56 @@ dialog h3 {
 
 :root[data-theme="dark"] :focus-visible {
     outline-color: #93c5fd;
+}
+
+.site-nav a[aria-current="page"] {
+    background: #1b2a4a;
+    border-top-color: #7fa6e0;
+    font-weight: 600;
+}
+
+main > section[hidden] {
+    display: none;
+}
+
+.toast {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 88px;
+    z-index: 60;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 14px 18px;
+    border-left: 6px solid #7fa6e0;
+    border-radius: 12px;
+    background: var(--dark);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+:root[data-theme="dark"] .toast {
+    color: #0f111d;
+    border-left-color: #1f386f;
+}
+
+@media (min-width: 768px) {
+    .toast {
+        left: auto;
+        right: 24px;
+        bottom: 24px;
+        margin: 0;
+    }
 }
