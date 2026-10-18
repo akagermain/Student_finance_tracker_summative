@@ -83,7 +83,7 @@ async function importFile(file) {
         return;
     }
 
-    const agreed = await askCoonfirm(
+    const agreed = await askConfirm(
         'Replace your records?',
         'This file has ' + result.records.length + ' records. Your current ' + getRecords().length + ' records will be replaced.',
         'Yes, replace'
@@ -131,7 +131,7 @@ export function initDataTools() {
     resetButton.addEventListener('click', resetEverything);
 
     importInput.addEventListener('change', async () => {
-        await importFile(importInput.file[0]);
+        await importFile(importInput.files[0]);
         importInput.value = '';
     });
 }
