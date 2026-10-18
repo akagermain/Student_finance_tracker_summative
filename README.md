@@ -6,7 +6,7 @@ With this app, you can add expenses, edit or delete them, with a confirmation be
 To directly check the web app, below are the website link and demo link, you can click on each to view.
 
 - Live site link: [Pocketful](https://akagermain.github.io/pocketful/)
-- Demo video: 
+- Demo video: [Frontend-Web_Summative_Demo_Video](https://youtu.be/vwluVNrXrCg)
 
 ## Features and Regex
 Features about the app, and the regex patterns applied are explained in SPEC.md which is located in docs directory. You click the link below to directly open it.
@@ -48,6 +48,7 @@ styles/ main.css
 tests/ validator.test.js stats.test.js jsonfile.test.js
 docs/ SPEC.md wireframes/
 scripts/ main.js router.js state.js storage.js validators.js search.js sort.js stats.js ui.js dashboard.js settings.js datatools.js jsonfile.js seed.js
+codepause_report/ codepause-export-1792347325174
 ```
 
 ## Contact
